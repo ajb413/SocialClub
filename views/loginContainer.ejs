@@ -1,0 +1,37 @@
+<div id="loginContainer" class="login-container" ng-controller="ngLoginController">
+
+    <h2>
+
+        Log in here:
+
+    </h2>
+
+    <div class="inline-block">
+
+        <form ng-submit="submitLoginForm()">
+
+            UserName: <input id="emailField" type="text" ng-model="loginForm.userName">
+
+            <br /><br />
+
+            Password: <input id="passwordField" type="password" ng-model="loginForm.password">
+
+        </div>
+
+        <br />
+
+        <div>
+
+            <input type="submit" value="Log in">
+
+        </form>
+
+        <a href="/about">
+
+            <input type="submit" value="About">
+        
+        </a>
+
+    </div>
+
+</div>

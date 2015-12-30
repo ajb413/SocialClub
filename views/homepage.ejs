@@ -1,0 +1,47 @@
+    <head>
+
+        <title>
+
+            SocialClub
+
+        </title>
+
+    </head>
+
+    <body ng-app="ngSocialClub" ng-controller="ngHomeController">
+
+        <h1>
+
+            <a href="/">
+
+                Welcome to SocialClub
+
+            </a>
+
+        </h1>
+
+        <% if (!me.name) { %>
+
+            <% include loginContainer.ejs %>
+
+        <% } %>
+
+        <% if (me.name) { %>
+
+            <% include logoutContainer.ejs %>
+
+        <% } %>
+        
+        <br />
+
+        <% include userContainer.ejs %>
+
+        <br />
+
+        <% if (me.name) { %>
+
+            <% include postContainer.ejs %>
+
+        <% } %>
+
+    </body>

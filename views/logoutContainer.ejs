@@ -1,0 +1,44 @@
+<div class="logout-container">
+
+	<h2>
+
+    Greetings, <%-me.name%>!
+
+	</h2>
+
+	<div>
+
+        <a href="/logout">
+
+            <input type="submit" value="Log out">
+            
+        </a>
+
+        <a href="/about">
+
+            <input type="submit" value="About">
+            
+        </a>
+
+        <a href="/profile">
+
+            <input type="submit" value="Profile">
+            
+        </a>
+
+        
+        <% if (me.permissions === 'senior') { %>
+
+        <a href="/admin-panel">
+
+            <input type="submit" value="Admin Panel">
+            
+        </a>
+
+        <% } %>
+
+    </div>
+
+	<div></div>
+
+</div>

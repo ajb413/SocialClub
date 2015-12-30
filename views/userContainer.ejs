@@ -1,0 +1,27 @@
+<div id="users" class="users-container">
+
+    <h3>
+
+        SocialClub Members
+
+    </h3>
+
+    <ul>
+
+        <li ng-repeat="member in memberData">
+
+            <div>
+
+                <img data-ng-src="{{member.profPic}}" />
+                <div class="inline-block {{member.status ? 'online' : 'offline'}}"></div>
+                <div class="inline-block">{{member.name}}</div>
+
+            </div>
+
+        </li>
+
+    </ul>
+
+    <div></div>
+
+</div>

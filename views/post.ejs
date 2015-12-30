@@ -1,0 +1,26 @@
+<img src="<%=posts[i].author.avatar%>"/>
+
+<p>
+
+	<b><%=posts[i].author.name%></b>
+
+	</br>
+
+	on <%=posts[i].createdAt%>
+
+</p>
+
+</br>
+
+<%=posts[i].content%>
+
+<% if (posts[i].author === me.name || me.permissions === 'senior') { %>
+
+	<div class="posts-button-container">
+
+		<input type="submit" value="Delete" ng-click="deletePost('<%=posts[i].id%>')" />
+
+	</div>
+
+<% } %>
+

@@ -1,0 +1,90 @@
+    <head>
+
+        <title>
+
+            SocialClub
+
+        </title>
+
+    </head>
+
+    <body ng-app="ngSocialClub">
+
+        <h1>
+
+            <a href="/">
+
+                Welcome to SocialClub
+
+            </a>
+
+        </h1>
+
+        <div id="text" class="small-body-container" >
+
+            <h3>
+
+                User Profile Data
+
+            </h3>
+            
+            <div class="profile-container" ng-controller="ngProfileController">
+
+                Name: <b> {{ profileData.name }} </b>
+
+                <br /><br />
+
+                Car: <b> {{ profileData.car }} </b>
+
+                <br /><br />
+
+                Login:  <b> {{ profileData.email }} </b>
+
+                <br /><br />
+
+                Old Password: <input type="password" ng-model="profileData.oldPassword">
+
+                <br /><br />
+
+                New Password: <input type="password" ng-model="profileData.newPassword">
+
+                <br /><br />
+
+                Confirm: <input type="password" ng-model="profileData.confirmPassword">
+
+                <br /><br />
+
+                <div class="profpic-update-container">
+
+                    <p>
+
+                        Current Avatar:
+                        <img class="profile-picture" data-ng-src="{{profileData.avatar}}" />
+
+                    </p>
+
+                    <br />
+
+                    <input type="file" id="imgInput" />
+
+                    <canvas class="profile-picture" id="imgCanvas"></canvas>
+
+                </div>
+
+                <div class="center submit-container">
+
+                    <div class="profile-update-response">{{updateStatus}}</div>
+
+                    <br />
+
+                    <input type="submit" value="Save Changes" ng-click="updateProfile()" >
+
+                </div>
+
+            </div>
+
+			<div></div>
+
+		</div>
+
+    </body>

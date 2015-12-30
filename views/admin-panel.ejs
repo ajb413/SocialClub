@@ -1,0 +1,159 @@
+    <head>
+
+        <title>
+
+            SocialClub
+
+        </title>
+
+    </head>
+
+    <body ng-app="ngSocialClub">
+
+        <h1>
+
+            <a href="/">
+
+                Welcome to SocialClub
+
+            </a>
+
+        </h1>
+
+        <div id="text" class="small-body-container" >
+
+            <h3>
+
+                Admin Panel
+
+            </h3>
+            
+            <div class="admin-panel-container" ng-controller="ngAdminPanelController">
+
+                <div class="user-section" ng-repeat="user in allUsers">
+
+                    <span>
+
+                        <b>Id:</b>
+                        <span>{{user.id}}</span>
+
+                    </span>
+
+                    <br /><br />
+
+                    <span>
+
+                        <b>Name:</b>
+                        <label>{{user.name}}</label>
+                        
+                    </span>
+
+                    <br /><br />
+
+                    <span>
+
+                        <b>Car:</b>
+                        <label>{{user.car}}</label>
+                        
+                    </span>
+
+                    <br /><br />
+
+                    <span>
+
+                        <b>Permissions:</b>
+                        <label>{{user.permissions}}</label>
+                        
+                    </span>
+
+                    <br /><br />
+
+                    <span>
+
+                        <b>Login:</b>
+                        <label>{{user.email}}</label>
+                        
+                    </span>
+
+                    <br /><br />
+
+                    <div class="center submit-container">
+        
+                        <br />
+
+                       <input class="edit-button" name="{{$index}}" type="submit" value="Edit">
+
+                    </div>
+
+                </div>
+
+                <div class="new-user">
+
+                    <h3>
+
+                        New User
+
+                    </h3>
+
+                    <span>
+
+                        <b>Name:</b>
+                        <input id="newName" type="text" ></input>
+                        
+                    </span>
+
+                    <br /><br />
+
+                    <span>
+
+                        <b>Car:</b>
+                        <input id="newCar" type="text" ></input>
+                        
+                    </span>
+
+                    <br /><br />
+
+                    <span>
+
+                        <b>Permissions:</b>
+                        <input id="newPermissions" type="text" ></input>
+                        
+                    </span>
+
+                    <br /><br />
+
+                    <span>
+
+                        <b>Login:</b>
+                        <input id="newLogin" type="text" ></input>
+                        
+                    </span>
+
+                    <br /><br />
+
+                    <span>
+
+                        <b>Password:</b>
+                        <input id="newPassword" type="password" ></input>
+                        
+                    </span>
+
+                    <br /><br />
+
+                    <div class="center submit-container">
+
+                        <br />
+
+                        <input id="create-button" type="submit" value="Create New User">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </body>
+
+    <!--<script src="/js/admin-panel/admin-panel.js"></script>-->
