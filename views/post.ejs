@@ -14,7 +14,7 @@
 
 <%=posts[i].content%>
 
-<% if (posts[i].author === me.name || me.permissions === 'senior') { %>
+<% if (posts[i].author.name === me.name || me.permissions === 'senior') { %>
 
 	<div class="posts-button-container">
 
