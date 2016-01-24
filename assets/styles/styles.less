@@ -285,3 +285,53 @@ canvas
 {
 	display: none;
 }
+
+.ribbon
+{
+	transform: rotate(-45deg) translateX(-80px) translateY(-40px);
+	overflow: hidden;
+	display: block;
+	position: fixed;
+	background-color: black;
+	width: 250px;
+	height: 30px;
+}
+
+.inner-ribbon
+{
+	padding-left: 22px;
+	margin-top: 4px;
+	font-size: 12px;
+	line-height: 20px;
+	height: 20px;
+	font-family: monospace;
+	border-top: 1px dotted #FFFFFF;
+	border-bottom: 1px dotted #FFFFFF;
+	color: #FFFFFF;
+}
+
+@media screen and (max-width: 560px)
+{
+	.inner-ribbon
+	{
+	    padding-left: 12px;
+	    margin-top: 2px;
+	    font-size: 10px;
+	    line-height: 12px;
+	    height: 14px;
+	    font-family: monospace;
+	    border-top: 1px dotted #FFFFFF;
+	    border-bottom: 1px dotted #FFFFFF;
+	    color: #FFFFFF;
+	}
+
+	.ribbon {
+	    transform: rotate(-45deg) translateX(-80px) translateY(-51px);
+	    overflow: hidden;
+	    display: block;
+	    position: absolute;
+	    background-color: black;
+	    width: 250px;
+	    height: 20px;
+	}
+}
