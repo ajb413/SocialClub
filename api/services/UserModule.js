@@ -171,7 +171,7 @@ module.exports = {
 			deffered.reject('Name cannot be blank or contain invaild characters.');
 		}
 
-		if (req.param("permissions") !== "junior" && !req.param("permissions") !== "senior")
+		if (req.param("permissions") !== "junior" && req.param("permissions") !== "senior")
 		{
 			deffered.reject('Invalid permissions, choose "junior" or "senior"');
 		}
