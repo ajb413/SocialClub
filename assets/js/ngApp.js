@@ -131,24 +131,32 @@ function($scope, $http)
 
 	$scope.updateProfile = function ()
 	{
-		$http.put('/updateProfile', {
+		if (newAvatarUri !== "Invalid")
+		{
+			$http.put('/updateProfile', {
 
 			oldPassword: $scope.profileData.oldPassword,
 			newPassword: $scope.profileData.newPassword,
 			confirmPassword: $scope.profileData.confirmPassword,
 			avatar: newAvatarUri
 
-		})
-		.then(function onSuccess (sailsResponse)
+			})
+			.then(function onSuccess (sailsResponse)
+			{
+				$scope.updateStatus = "Update Successful";
+				location.reload(true);
+			})
+			.catch(function onError (sailsResponse)
+			{
+				$scope.updateStatus = sailsResponse.data;
+				return;
+			});
+		}
+		else
 		{
-			$scope.updateStatus = "Update Successful";
-			location.reload(true);
-		})
-		.catch(function onError (sailsResponse)
-		{
-			$scope.updateStatus = sailsResponse.data;
-			return;
-		});
+			$scope.updateStatus = "Invalid file type.";
+		}
+		
 	}
 
 	function handleImg (e)
@@ -159,7 +167,10 @@ function($scope, $http)
 			var file = e.target.files[0];
 
 			//make sure the picture is 200kb or less, and that it's a valid file
-			if (file.size <= 200000 && file.type === ('image/png' || 'image/jpeg' ||'image/jpg'))
+			if (file.size <= 200000 &&
+				file.type === 'image/png' ||
+				file.type === 'image/jpeg' ||
+				file.type === 'image/jpg')
 			{
 				var reader = new FileReader();
 
@@ -181,7 +192,7 @@ function($scope, $http)
 			}
 			else
 			{
-				//Set varible for ajax, backend will send correct invalid response
+				//Ajax call will not be made
 				newAvatarUri = "Invalid";
 			}
 		}

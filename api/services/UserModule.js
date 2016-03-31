@@ -227,7 +227,7 @@ function emailIsValid(email)
 	return regex.test(email);
 }
 
-//returns true if name is "First Last" style
+//returns true if name is "First Last" format
 function nameIsValid(name)
 {
 	var regex = /^[a-z ,.'-]+$/i;
@@ -241,7 +241,9 @@ function validAvitar(uri)
 	if (uri.length > 25 && uri.length < 280000) 
 	{
 		var sub3 = uri.substring(0, 22);
-		if (sub3 === ("data:image/png;base64," || "data:image/jpg;base64," || "data:image/jpeg;base64"))
+		if (sub3 === "data:image/png;base64," ||
+			sub3 === "data:image/jpg;base64," ||
+			sub3 === "data:image/jpeg;base64")
 		{
 			return true;
 		}
